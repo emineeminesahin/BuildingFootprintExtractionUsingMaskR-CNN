@@ -1,11 +1,11 @@
-Deep learning model - https://www.arcgis.com/home/item.html?id=a6857359a1cd44839781a4f113cd5934
+## Deep learning model - https://www.arcgis.com/home/item.html?id=a6857359a1cd44839781a4f113cd5934
 
 ArcGIS Living Atlas of the World'den alınan ABD bina çıkarımı derin öğrenme modelinin yüksek çözünürlüklü uydu görüntüsünde test edilmiştir. Manuel olarak yapılırsa, bina çıkarımı işlemi karmaşık ve zaman alan bir iştir. Derin öğrenme, bu görevi önemli ölçüde optimize etmek ve otomatikleştirmek için kullanılabilir. Bu bina çıkarımı derin öğrenme modeli, yüksek çözünürlüklü uydu görüntülerinden bina çıkarımı için önceden eğitilmiş, kullanıma hazır bir derin öğrenme modelidir. Bu model olduğu gibi kullanılabilir veya kendi verilerimize / coğrafyamıza uyum sağlamak için ince ayar yapılabilir. 
 Uygulamada yazılım olarak ArcGIS Pro kullanılmaktadır. ABD Bina çıkarımı derin öğrenme modelinde girdi olarak raster veri kümeleri, tarama ürünleri, mozaik veri kümeleri kullanılabilir. Kullanılan görüntüler optimum sonuç için 30-50 cm yüksek çözünürlüklü uydu görüntüsü, 8 bit, multispektral görüntülerden elde edilmiş ortofotolar olmalıdır. Nadir ile açısı yüksek olan görüntüler uygun sonuç vermeyecektir. Bu uygulamada çalışma alanı Amerika Birleşik Devletleri'nin Kaliforniya eyaletinde yer alan ve Riverside ilçesinde yer alan bir Lake Elsinore seçilmiştir.
 
 ![image](https://user-images.githubusercontent.com/114474881/223489936-00c27b17-a7a8-418f-84fb-021b835162d4.png)
 
- Preprocessing İşlemi
+### Preprocessing İşlemi
  
  ![image](https://user-images.githubusercontent.com/114474881/223490137-347d1dd0-65b4-40c9-ae3a-e00bd49d69aa.png)
 
@@ -17,7 +17,7 @@ ArcGIS Pro > Contents bölmesinde raster görüntüye ulaşılır, ‘‘.ımd �
 
 ![image](https://user-images.githubusercontent.com/114474881/223490711-0f4c4e81-2555-4cb1-bacb-9f65ae9d4677.png)
 
-Bina Çıkarımı
+### Bina Çıkarımı
 
 GitHub’ dan alınan Esri derin öğrenme ArcGIS Pro’ ya kurulduktan sonra model açılır.
 
@@ -76,5 +76,6 @@ Bazı bölgelerde ise bina olmayan yerleri de bina olarak algılamıştır. (Şe
 
 ![image](https://user-images.githubusercontent.com/114474881/223493853-4f4a855e-56d8-45ff-abb0-d48a26cb94c6.png)
 
-SONUÇLAR VE ÖNERİLER 
+### SONUÇLAR VE ÖNERİLER 
+
 Günümüzde uzaktan algılama popüler bir alandır. Bu nedenle, güvenlik, savunma, ziraat, afet tespiti, şehir gelişimi, elektrik ve gaz dağıtımı gibi amaçlarla yaygın olarak kullanılmaktadır. Derin öğrenme için kullanılan algoritmalarda, çok güçlü bir bilgisayar donanımına ihtiyaç duyduğu gözlemlenmiştir. Derin öğrenme geleneksel makine öğrenmesi algoritmalarına göre en büyük avantajı olan otomatik özellik/öznitelik çıkarımı test edilmiştir. Bu yöntemin daha çok tercih edilme nedeni insandan bağımsız ve hızlı bir şekilde verilen görevi yerine getirmesi olarak sunulabilir. Çünkü bunun temelinde insanı taklit eden bir algoritma mevcuttur. Derin öğrenme yöntemlerinden Mask R CNN modelinde diğer diğer modeller gibi kargaşa giderme, öznitelik çıkarma, boyut azalma gibi algoritmalara ihtiyaç duyulmaması sebebiyle işlem yükü azalmakta ancak doğrudan görüntü üzerinden model eğitimleri gerçekleştiğinden eğitim süreleri uzun olmaktadır. Obje tespiti için Faster R-CNN ile karşılaştırıldığında bu yöntem hem ürettiği nesnelik puanı hem de hesaplama süresi açısından daha başarılı sonuçlar verir. Mask R-CNN’de, görüntülerdeki sınırlayıcı kutulara ilave olarak gerçek görünümlerine daha yakın maskelerle işaretlenmektedir. Bu modelde bulunan ve diğer bölgeye dayalı yöntemlerde bulunmayan, nesne konumunun daha doğru şekilde belirlenmesini sağlayan RoI katmanı yardımıyla daha yüksek doğruluk sağlamaktadır. Bu çalışmada olduğu gibi seçilen veri kümesinin dağınık dağılımlı olmamasıyla; derin öğrenme algoritmaları, makine öğrenmesinden daha iyi sonuçlar vermektedir. İş gücünü büyük ölçüde azaltmasına rağmen mükemmel doğrulukta olmadığını göstermektedir. Dağınık bir dağılımda zorlaştırıcı ve uğraştırıcı olabilir. Bu doğrultuda her şeye rağmen manuel bina çıkarımına gerek kalmaması açısından önerilen yöntem daha da geliştirilebilir. Ayrıca uydu görüntülerinden yollar, su ve diğer özelliklerin çıkarılması için de kullanılabilir hale getirilebilir.
